@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{APP_NAME}} – Wsparcie, Polityka prywatności i Warunki</title>
+  <meta name="description" content="Strona wsparcia i prawna dla aplikacji {{APP_NAME}} – polityka prywatności, warunki korzystania, informacje o zakupach w aplikacji (IAP) oraz kontakt ze wsparciem." />
+  <meta name="robots" content="index,follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{APP_NAME}} – Support & Privacy" />
+  <meta property="og:description" content="Polityka prywatności, warunki, wsparcie i IAP dla {{APP_NAME}}." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://{{YOUR_GITHUB_USERNAME}}.github.io/{{REPO_NAME}}/" />
+  <meta property="og:image" content="https://{{YOUR_GITHUB_USERNAME}}.github.io/{{REPO_NAME}}/og-image.png" />
+  <!-- Favicon (opcjonalnie podmień pliki) -->
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --card:#111827; /* gray-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --accent:#22d3ee; /* cyan-400 */
+      --accent-2:#a78bfa; /* violet-400 */
+      --ok:#34d399; /* emerald-400 */
+      --warn:#fbbf24; /* amber-400 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#020617);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent)} a:hover{color:var(--accent-2)}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(2,6,23,.6);border-bottom:1px solid rgba(148,163,184,.2);z-index:10}
+    nav{max-width:1000px;margin:auto;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .chip{border:1px solid rgba(148,163,184,.25);padding:6px 10px;border-radius:999px;color:var(--muted)}
+    main{max-width:1000px;margin:0 auto;padding:32px 20px 80px}
+    section{margin:28px 0;padding:24px;border:1px solid rgba(148,163,184,.18);border-radius:16px;background:linear-gradient(180deg,rgba(17,24,39,.6),rgba(15,23,42,.6))}
+    h1{font-size:28px;line-height:1.2;margin:0 0 6px}
+    h2{font-size:22px;margin:8px 0 6px}
+    h3{font-size:18px;margin:12px 0 6px;color:#cbd5e1}
+    p{margin:8px 0}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 8px 18px}
+    code{background:#0b1020;padding:2px 6px;border-radius:6px;border:1px solid rgba(148,163,184,.2)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
+    .badge{display:inline-flex;gap:6px;align-items:center;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid rgba(148,163,184,.25)}
+    .ok{color:var(--ok);border-color:rgba(52,211,153,.35)}
+    .warn{color:var(--warn);border-color:rgba(251,191,36,.35)}
+    footer{max-width:1000px;margin:0 auto;padding:24px 20px;color:var(--muted)}
+    .lang{display:flex;gap:8px}
+    .card{padding:16px;border:1px solid rgba(148,163,184,.18);border-radius:12px;background:rgba(2,6,23,.35)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{border-bottom:1px solid rgba(148,163,184,.18);padding:10px;text-align:left}
+    .kicker{font-size:12px;letter-spacing:.2px;color:var(--muted);text-transform:uppercase}
+  </style>
+  <script>
+    // Prosty przełącznik PL/EN – domyślnie PL. Dodaj klasę .en do body aby pokazać ang.
+    function setLang(lang){
+      document.body.classList.toggle('en', lang==='en');
+      localStorage.setItem('lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', ()=>{
+      const saved = localStorage.getItem('lang');
+      if(saved) setLang(saved);
+    });
+  </script>
+  <style>
+    /* Ukrywanie treści językowych */
+    .t-pl{display:block}
+    .t-en{display:none}
+    body.en .t-pl{display:none}
+    body.en .t-en{display:block}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">{{APP_NAME}}</div>
+      <div class="lang">
+        <button class="chip" onclick="setLang('pl')">PL</button>
+        <button class="chip" onclick="setLang('en')">EN</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="overview">
+      <div class="kicker t-pl">Strona oficjalna • Support + Privacy + Terms</div>
+      <div class="kicker t-en">Official Site • Support + Privacy + Terms</div>
+      <h1 class="t-pl">{{APP_NAME}} – wsparcie, prywatność i warunki</h1>
+      <h1 class="t-en">{{APP_NAME}} – support, privacy & terms</h1>
+      <p class="muted t-pl">Deweloper: <strong>{{DEVELOPER_NAME}}</strong> • Kontakt: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></p>
+      <p class="muted t-en">Developer: <strong>{{DEVELOPER_NAME}}</strong> • Contact: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 class="t-pl">Szybkie linki</h3>
+          <h3 class="t-en">Quick links</h3>
+          <ul>
+            <li><a href="#support" class="t-pl">Wsparcie i kontakt</a><a href="#support" class="t-en">Support & contact</a></li>
+            <li><a href="#privacy" class="t-pl">Polityka prywatności</a><a href="#privacy" class="t-en">Privacy Policy</a></li>
+            <li><a href="#terms" class="t-pl">Warunki korzystania</a><a href="#terms" class="t-en">Terms of Use</a></li>
+            <li><a href="#iap" class="t-pl">Zakupy w aplikacji (IAP)</a><a href="#iap" class="t-en">In‑App Purchases (IAP)</a></li>
+            <li><a href="#legal" class="t-pl">Informacje prawne</a><a href="#legal" class="t-en">Legal</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="t-pl">Status reklam i zbierania danych</h3>
+          <h3 class="t-en">Ads & data collection status</h3>
+          <p><span class="badge ok">✔</span> <span class="t-pl">Brak reklam w aplikacji.</span><span class="t-en">The app contains no ads.</span></p>
+          <p><span class="badge ok">✔</span> <span class="t-pl">Zakupy w aplikacji (IAP) obsługuje Apple. Nie przetwarzamy danych kart.</span><span class="t-en">In‑app purchases are processed by Apple. We do not process card data.</span></p>
+          <p><span class="badge warn">•</span> <span class="t-pl">Nie gromadzimy danych osobowych użytkowników.<br><small class="muted">(Jeśli to się zmieni – zaktualizuj politykę.)</small></span><span class="t-en">We do not collect personal data.<br><small class="muted">(If this changes, update the policy.)</small></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <h2 class="t-pl">Wsparcie i kontakt</h2>
+      <h2 class="t-en">Support & contact</h2>
+      <p class="t-pl">W razie problemów lub pytań napisz do nas na adres <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>. Staramy się odpowiadać w ciągu 3 dni roboczych.</p>
+      <p class="t-en">For help, email <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>. We aim to reply within 3 business days.</p>
+      <p class="t-pl">Możesz też zgłaszać błędy jako „Issues” w repozytorium GitHub: <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}/{{REPO_NAME}}" target="_blank" rel="noopener">github.com/{{YOUR_GITHUB_USERNAME}}/{{REPO_NAME}}</a></p>
+      <p class="t-en">You can also open issues on GitHub: <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}/{{REPO_NAME}}" target="_blank" rel="noopener">github.com/{{YOUR_GITHUB_USERNAME}}/{{REPO_NAME}}</a></p>
+    </section>
+
+    <section id="privacy">
+      <h2 class="t-pl">Polityka prywatności</h2>
+      <h2 class="t-en">Privacy Policy</h2>
+      <p class="t-pl">Data ostatniej aktualizacji: <strong>12 listopada 2025</strong></p>
+      <p class="t-en">Last updated: <strong>November 12, 2025</strong></p>
+
+      <h3 class="t-pl">Zakres</h3>
+      <h3 class="t-en">Scope</h3>
+      <p class="t-pl">Ta polityka dotyczy aplikacji <strong>{{APP_NAME}}</strong> publikowanej przez <strong>{{DEVELOPER_NAME}}</strong>.</p>
+      <p class="t-en">This policy applies to <strong>{{APP_NAME}}</strong> published by <strong>{{DEVELOPER_NAME}}</strong>.</p>
+
+      <h3 class="t-pl">Jakie dane gromadzimy</h3>
+      <h3 class="t-en">What data we collect</h3>
+      <p class="t-pl"><strong>Nie gromadzimy</strong> danych osobowych użytkowników i nie śledzimy aktywności użytkowników w naszej aplikacji.</p>
+      <p class="t-en">We do <strong>not collect</strong> personal data and we do not track users across apps or websites.</p>
+
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="t-pl">Kategoria</th>
+              <th class="t-en">Category</th>
+              <th class="t-pl">Gromadzone</th>
+              <th class="t-en">Collected</th>
+              <th class="t-pl">Cel/udostępnianie</th>
+              <th class="t-en">Purpose/sharing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="t-pl">Dane osobowe</td>
+              <td class="t-en">Personal Data</td>
+              <td>Nie</td>
+              <td>No</td>
+              <td class="t-pl">—</td>
+              <td class="t-en">—</td>
+            </tr>
+            <tr>
+              <td class="t-pl">Dane płatności</td>
+              <td class="t-en">Payment data</td>
+              <td>Nie</td>
+              <td>No</td>
+              <td class="t-pl">Płatności obsługuje Apple (IAP)</td>
+              <td class="t-en">Handled by Apple (IAP)</td>
+            </tr>
+            <tr>
+              <td class="t-pl">Diagnostyka/awarie</td>
+              <td class="t-en">Diagnostics/crash logs</td>
+              <td>Nie</td>
+              <td>No</td>
+              <td class="t-pl">—</td>
+              <td class="t-en">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="t-pl">IAP i dane</h3>
+      <h3 class="t-en">IAP & data</h3>
+      <p class="t-pl">Zakupy w aplikacji są przetwarzane przez Apple zgodnie z <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Polityką prywatności Apple</a>. Nie otrzymujemy dostępu do danych Twojej karty płatniczej.</p>
+      <p class="t-en">IAP are processed by Apple under Apple’s <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a>. We never see your card details.</p>
+
+      <h3 class="t-pl">Prawa użytkownika</h3>
+      <h3 class="t-en">Your rights</h3>
+      <p class="t-pl">Masz prawo do kontaktu z nami w sprawie pytań o prywatność: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>.</p>
+      <p class="t-en">Contact us with any privacy questions: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>.</p>
+    </section>
+
+    <section id="terms">
+      <h2 class="t-pl">Warunki korzystania</h2>
+      <h2 class="t-en">Terms of Use</h2>
+      <ol>
+        <li class="t-pl">Korzystając z aplikacji, akceptujesz te warunki i <a href="#legal">postanowienia prawne</a>.</li>
+        <li class="t-en">By using the app you agree to these terms and the <a href="#legal">legal notices</a>.</li>
+        <li class="t-pl">Aplikacja jest dostarczana „tak jak jest” bez gwarancji.</li>
+        <li class="t-en">The app is provided “as is” without warranties.</li>
+        <li class="t-pl">Odpowiedzialność dewelopera jest ograniczona do maksymalnego zakresu dozwolonego przez prawo.</li>
+        <li class="t-en">Our liability is limited to the maximum extent permitted by law.</li>
+      </ol>
+      <p class="muted t-pl"><em>Uwaga:</em> jeśli kiedykolwiek dodasz subskrypcje auto‑odnawialne, dodaj sekcję o cyklu rozliczeniowym, cenach, anulowaniu i odnowieniach.</p>
+      <p class="muted t-en"><em>Note:</em> if you add auto‑renewing subscriptions, include billing cycle, pricing, cancellation and renewal terms.</p>
+    </section>
+
+    <section id="iap">
+      <h2 class="t-pl">Zakupy w aplikacji (IAP)</h2>
+      <h2 class="t-en">In‑App Purchases (IAP)</h2>
+      <ul>
+        <li class="t-pl">Obsługiwane i rozliczane przez Apple. Ewentualne zwroty realizowane są przez Apple zgodnie z lokalnym prawem.</li>
+        <li class="t-en">Processed and billed by Apple. Refunds are handled by Apple per local law.</li>
+        <li class="t-pl">Aktualne typy zakupów: <strong>brak subskrypcji</strong>; dostępne zakupy jednorazowe (np. odblokowania/„consumables”).</li>
+        <li class="t-en">Current purchase types: <strong>no subscriptions</strong>; one‑time purchases (e.g., unlocks/consumables).</li>
+        <li class="t-pl">Aby przywrócić zakupy: użyj opcji <em>Przywróć zakupy</em> w aplikacji (jeśli dostępna) lub skontaktuj się z nami.</li>
+        <li class="t-en">To restore purchases: use <em>Restore Purchases</em> in‑app (if available) or contact us.</li>
+      </ul>
+    </section>
+
+    <section id="legal">
+      <h2 class="t-pl">Informacje prawne</h2>
+      <h2 class="t-en">Legal</h2>
+      <p class="t-pl">Korzystanie z aplikacji podlega <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standardowej Umowie Licencyjnej Apple (EULA)</a>.</p>
+      <p class="t-en">Use of the app is subject to Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard EULA</a>.</p>
+      <p class="t-pl">Prawa autorskie © <span id="year"></span> {{DEVELOPER_NAME}}. Wszelkie prawa zastrzeżone.</p>
+      <p class="t-en">Copyright © <span id="year2"></span> {{DEVELOPER_NAME}}. All rights reserved.</p>
+    </section>
+
+    <section id="app-info">
+      <h2 class="t-pl">Informacje o aplikacji</h2>
+      <h2 class="t-en">App information</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 class="t-pl">Identyfikacja</h3>
+          <h3 class="t-en">Identification</h3>
+          <ul>
+            <li class="t-pl">Nazwa: {{APP_NAME}}</li>
+            <li class="t-en">Name: {{APP_NAME}}</li>
+            <li class="t-pl">Deweloper: {{DEVELOPER_NAME}}</li>
+            <li class="t-en">Developer: {{DEVELOPER_NAME}}</li>
+            <li>Bundle ID: <code>{{BUNDLE_ID}}</code></li>
+            <li class="t-pl">Wersja: {{APP_VERSION}}</li>
+            <li class="t-en">Version: {{APP_VERSION}}</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="t-pl">Kontakt</h3>
+          <h3 class="t-en">Contact</h3>
+          <ul>
+            <li>E‑mail: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></li>
+            <li class="t-pl">Strona GitHub: <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}/{{REPO_NAME}}" target="_blank" rel="noopener">Repozytorium</a></li>
+            <li class="t-en">GitHub: <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}/{{REPO_NAME}}" target="_blank" rel="noopener">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="t-pl">Ta strona pełni funkcję <strong>App Support URL</strong> i <strong>Privacy Policy URL</strong> dla App Store Connect. Upewnij się, że zastąpiłeś wszystkie nawiasy <code>{{...}}</code> swoimi danymi.</div>
+    <div class="t-en">This page serves as the <strong>App Support URL</strong> and <strong>Privacy Policy URL</strong> for App Store Connect. Replace all <code>{{...}}</code> placeholders with your details.</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+
+ 
+</body>
+</html>
